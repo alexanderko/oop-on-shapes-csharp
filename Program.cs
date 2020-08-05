@@ -33,14 +33,29 @@ namespace oop_on_shapes
             return Math.PI * radius * radius;
         }
     }
+
+    class Square : Shape
+    {
+        private int side;
+
+        public Square(char color, int side) : base(color)
+        {
+            this.side = side;
+        }
+
+        public override double CalculateArea()
+        {
+            return side * side;
+        }
+    }
+
     class Program
     {
         static void Main(string[] args)
         {
             Shape[] shapes = {
                 new Circle('r', 3),
-                new Circle('b', 3),
-                new Circle('w', 3)
+                new Square('b', 10)
             };
 
             foreach(var shape in shapes)
